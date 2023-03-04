@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.kg.marat_uulu_daniyar_7of3month.databinding.FragmentRickAndMortyBinding
 
 class RickAndMortyFragment : Fragment() {
+
     private lateinit var binding: FragmentRickAndMortyBinding
     private var charactersList = arrayListOf(
         Characters("https://cdn.rikmorti.ru/uploads/2020/02/rik-sanchez-rikmorti-ru.jpg", "Alive", "Rick Sanchez","Rick Sanchez is one of the two main characters in the American animated television series Rick and Morty, created by Justin Roiland and Dan Harmon. Rick is a brilliant scientist, alcoholic, realist, atheist and misanthrope; for the character of negona, cynicism and disregard for generally accepted norms of behavior, and he is also afraid of pirates."),
@@ -38,6 +39,6 @@ class RickAndMortyFragment : Fragment() {
 
     private fun onItemClick (position: Int){
         val characters = charactersList[position]
-        findNavController().navigate(R.id.infoOfCharactersFragment, bundleOf(KEY_FOR_INFO to characters))
+        findNavController().navigate(RickAndMortyFragmentDirections.actionRickAndMortyFragmentToInfoOfCharactersFragment(characters))
     }
 }

@@ -9,12 +9,21 @@
         android:id="@+id/rickAndMortyFragment"
         android:name="com.kg.marat_uulu_daniyar_7of3month.RickAndMortyFragment"
         android:label="fragment_rick_and_morty"
-        tools:layout="@layout/fragment_rick_and_morty" />
+        tools:layout="@layout/fragment_rick_and_morty" >
+        <action
+            android:id="@+id/action_rickAndMortyFragment_to_infoOfCharactersFragment"
+            app:destination="@id/infoOfCharactersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/infoOfCharactersFragment"
         android:name="com.kg.marat_uulu_daniyar_7of3month.InfoOfCharactersFragment"
         android:label="fragment_info_of_characters"
-        tools:layout="@layout/fragment_info_of_characters" />
+        tools:layout="@layout/fragment_info_of_characters" >
+        <argument
+            android:name="character"
+            app:argType="com.kg.marat_uulu_daniyar_7of3month.Characters"
+            />
+    </fragment>
 
 
 </navigation>
