@@ -26,10 +26,15 @@ class InfoOfCharactersFragment : Fragment() {
             navArgs = InfoOfCharactersFragmentArgs.fromBundle(this)
         }
         binding.apply {
-            Glide.with(imgOfCharacter).load(navArgs.character.picture).into(imgOfCharacter)
-            tvStatus.text = navArgs.character.status
-            tvName.text = navArgs.character.name
-            tvTinyInfo.text = navArgs.character.tinyInfo
+            navArgs.apply {
+                character.apply {
+                    Glide.with(imgOfCharacter).load(picture).into(imgOfCharacter)
+                    tvStatus.text = status
+                    tvName.text = name
+                    tvTinyInfo.text = tinyInfo
+                }
+            }
+
         }
 
     }
